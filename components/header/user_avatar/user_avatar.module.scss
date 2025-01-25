@@ -1,0 +1,19 @@
+.container {
+  width: $header_content_height;
+  height: $header_content_height;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.active {
+  border: 1px solid $primary;
+  transition: all 0.3s;
+}
+
+.avatar {
+  width: calc(#{$header_content_height} - 2px);
+  height: calc(#{$header_content_height} - 2px);
+  border-radius: 50%;
+  object-fit: cover;
+}

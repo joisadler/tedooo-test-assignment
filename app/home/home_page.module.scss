@@ -1,0 +1,7 @@
+.main {
+  width: 100%;
+  max-width: $max_content_width;
+  height: calc(100dvh - #{$header_height});
+  margin-inline: auto;
+  padding-block: $space_lg;
+}

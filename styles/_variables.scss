@@ -1,0 +1,32 @@
+@use 'functions' as *;
+
+/* Sizes */
+$header_height: 58px;
+$header_padding: 9px;
+$header_content_height: calc(#{$header_height} - #{$header_padding * 2});
+$max_content_width: 1120px;
+$space_xs: 4px;
+$space_sm: 8px;
+$space_md: 16px;
+$space_lg: 24px;
+$space_xl: 32px;
+
+/* Breakpoints */
+$mobile: 360px;
+$tablet: 768px;
+$desktop: 1024px;
+$macbook_pro: 1440px;
+$large_desktop: 1920px;
+
+/* Colors */
+$black: #000;
+$white: #FFF;
+$gray: #949796;
+$primary: #2DB8A1;
+$background_gray: #F6F7F7;
+$background_search_bar: #F4F5F5;
+$background_white: #FFFFFF;
+$text_black: #000;
+$text_gray: #949796;
+$text_primary: #2DB8A1;
+$text_link: #3174e3;

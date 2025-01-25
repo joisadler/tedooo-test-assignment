@@ -1,0 +1,14 @@
+.page {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: $max_content_width;
+  height: calc(100dvh - #{$header_height});
+  margin-inline: auto;
+}

@@ -1,0 +1,42 @@
+.container {
+  height: $header_height;
+  border-bottom: 1px solid transparent;
+  color: $text_gray;
+  transition: all 0.3s;
+
+  path {
+    stroke: $text_gray;
+    transition: all 0.3s;
+  }
+}
+
+.icon {
+  width: 18px;
+  height: auto;
+}
+
+.link {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: $space_sm;
+  height: 100%;
+  font-family: "Poppins", serif;
+  font-size: toRem(16);
+  line-height: 150%;
+  letter-spacing: toRem(-0.16);
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  color: $text_primary;
+  border-bottom: 1px solid $primary;
+  transition: all 0.3s;
+
+  path {
+    stroke: $primary;
+    transition: all 0.3s;
+  }
+}

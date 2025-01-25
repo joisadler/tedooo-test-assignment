@@ -1,0 +1,121 @@
+.main {
+  width: 100%;
+  max-width: $max_content_width;
+  height: calc(100dvh - #{$header_height});
+  margin-inline: auto;
+  color: $text_black;
+  font-family: 'DM Sans', serif;
+  background: $background_gray;
+  padding-block: $space_lg;
+}
+
+.title {
+  font-size: toRem(32);
+  font-weight: 700;
+  color: $text_black;
+}
+
+.subtitle {
+  font-size: toRem(20);
+  color: $text_black;
+  margin-bottom: $space_md;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space_xl;
+}
+
+.info {
+  flex: 1;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.contact_info p {
+  display: flex;
+  flex-direction: row;
+  gap: $space_md;
+  font-size: toRem(18);
+}
+
+.link {
+  font-size: toRem(16);
+  font-weight: 400;
+  text-decoration: none;
+  color: $text_link;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.section {
+  margin-top: $space_xl;
+  padding-bottom: $space_md;
+  border-bottom: 1px solid $gray;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.sectionTitle {
+  font-size: toRem(24);
+  font-weight: 600;
+  color: $text_black;
+  margin-bottom: $space_md;
+}
+
+.text {
+  font-size: toRem(16);
+  line-height: 1.5;
+  color: $text_black;
+}
+
+.job {
+  margin-bottom: $space_md;
+}
+
+.jobTitle {
+  font-size: toRem(16);
+  font-weight: 700;
+  color: $text_black;
+}
+
+.date {
+  font-size: toRem(16);
+  color: $text_black;
+}
+
+.list {
+  list-style: disc;
+  padding-left: $space_md;
+  font-size: toRem(16);
+  color: $text_black;
+  line-height: 1.5;
+}
+
+.list li {
+  margin-bottom: $space_xs;
+}
+
+.list h3 {
+  display: inline;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.highlight {
+  color: $text_black;
+  font-weight: 600;
+}
