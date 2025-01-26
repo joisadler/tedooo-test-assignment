@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: toRem(8);
+  padding: toRem(8) toRem(16);
+  border-radius: toRem(8);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.icon {
+  width: 18px;
+  height: auto;
+
+  path: {
+    fill: $text_action;
+    transition: all 0.2s;
+  }
+}
+
+.text {
+  font-family: 'DM Sans', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: toRem(14);
+  line-height: toRem(22);
+  color: $text_action;
+}
+
+.active {
+  color: $text_indigo;
+  transition: all 0.2s;
+
+  path {
+    fill: $text_indigo;
+    transition: all 0.2s;
+  }
+}

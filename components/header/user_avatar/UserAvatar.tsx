@@ -19,7 +19,6 @@ const UserAvatar: React.FC = () => {
           alt="User avatar"
           width={40}
           height={40}
-          layout="fixed"
         />
       </Link>
     </div>

@@ -1,0 +1,118 @@
+.container {
+  width: 100%;
+  border-radius: 12px;
+  background-color: $background_white;
+  box-shadow: 0px 1px 7px rgba(40, 47, 45, 0.07);
+  margin-bottom: $space_lg;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: $space_md;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: $space_sm;
+}
+
+.username {
+  font-family: 'DM Sans', serif;
+  font-weight: 500;
+  font-size: toRem(16);
+  line-height: toRem(20);
+  color: $text_dark_gray;
+}
+
+.info_line {
+  display: flex;
+  align-items: center;
+}
+
+.shop_name {
+  font-family: 'DM Sans', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: toRem(14);
+  line-height: toRem(20);
+  color: $text_indigo;
+}
+
+.time_ago {
+  font-family: 'DM Sans', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: toRem(14);
+  line-height: toRem(20);
+  color: $text_gray;
+}
+
+.text {
+  font-family: 'DM Sans', serif;
+  font-style: normal;
+  font-size: toRem(14);
+  line-height: toRem(20);
+  color: $text_black;
+  margin-block-end: $space_md;
+  padding-inline: $space_md;
+}
+
+.images {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: $space_sm;
+  width: 100%;
+}
+
+.image {
+  flex: 1;
+  max-width: calc(50% - $space_sm / 2);
+  height: auto;
+  object-fit: cover;
+}
+
+.singleImage .image {
+  max-width: 100%;
+}
+
+.stats_container {
+  padding: $space_md $space_md 0 $space_md;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block-end: $space_md;
+  border-bottom: 1px solid $separator_gray;
+}
+
+.likes_icon {
+  width: 18px;
+  height: 18px;
+  margin-right: $space_xs;
+}
+
+.likes, .comments {
+  font-family: 'DM Sans', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: toRem(14);
+  line-height: toRem(20);
+  color: $text_stats;
+}
+
+.likes {
+  display: inline-flex;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: $space_md;
+}

@@ -6,6 +6,7 @@ const HomePage: React.FC = () => {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <h1 className="sr_only">Tedooo feed</h1>
         <Feed />
       </main>
     </div>
