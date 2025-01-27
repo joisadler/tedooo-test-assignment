@@ -1,6 +1,14 @@
 'use client';
 import Header from '@/components/header';
 import { usePathname } from 'next/navigation';
+import { DM_Sans, Poppins } from 'next/font/google';
+import cn from 'classnames';
+
+const dmSans = DM_Sans({ subsets: ['latin-ext'] });
+const poppins = Poppins({
+  subsets: ['latin-ext'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 
 export default function Layout({
   children,
@@ -13,7 +21,7 @@ export default function Layout({
 
   return (
     <html lang="en">
-      <body>
+      <body className={cn(dmSans, poppins)}>
         {shouldShowHeader && <Header />}
         {children}
       </body>
