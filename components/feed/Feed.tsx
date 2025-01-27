@@ -1,9 +1,10 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { throttle } from 'lodash';
 import {
   FeedItem as FeedItemType,
   getFeedItems,
+  sendImpression,
 } from '@/services/feed/feed.service';
 import FeedItem from './feed_item/FeedItem';
 import styles from './feed.module.scss';
@@ -13,6 +14,9 @@ export default function Feed() {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [skip, setSkip] = useState(0);
+
+  const impressionSentIds = useRef(new Set<string>());
+  const itemRefs = useRef(new Map<string, HTMLDivElement>());
 
   const fetchFeedItems = useCallback(async () => {
     if (loading || !hasMore) return;
@@ -29,11 +33,13 @@ export default function Feed() {
     }
   }, [loading, hasMore, skip]);
 
+  // Fetch feed items on initial load
   useEffect(() => {
     if (feedItems.length > 0) return;
     fetchFeedItems();
   }, [fetchFeedItems, feedItems.length]);
 
+  // Infinite scroll
   useEffect(() => {
     const handleScroll = throttle(() => {
       const scrollPosition =
@@ -51,6 +57,36 @@ export default function Feed() {
       document.body.removeEventListener('scroll', handleScroll);
     };
   }, [fetchFeedItems]);
+
+  const isElementInViewport = (el: HTMLDivElement) => {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2
+    );
+  };
+
+  const sendImpressionOnce = (id: string) => {
+    if (impressionSentIds.current.has(id)) return;
+    sendImpression(id);
+    impressionSentIds.current.add(id);
+  };
+
+  // Send impression one time for each item in the viewport (Bonus task)
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      for (const [id, el] of itemRefs.current) {
+        if (isElementInViewport(el)) {
+          sendImpressionOnce(id);
+        }
+      }
+    }, 200);
+    document.body.addEventListener('scroll', handleScroll, {
+      passive: true,
+    });
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleLike = (id: string) => {
     setFeedItems((prevItems) =>
@@ -80,6 +116,11 @@ export default function Feed() {
           {...item}
           onToggleLike={toggleLike}
           onComment={onComment}
+          ref={(el) => {
+            if (el) {
+              itemRefs.current.set(item.id, el);
+            }
+          }}
         />
       ))}
       {loading && <p className={styles.loading}>Loading...</p>}

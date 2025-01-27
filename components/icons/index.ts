@@ -6,6 +6,7 @@ import MessageIcon from './MessageIcon';
 import NotificationIcon from './NotificationIcon';
 import SearchIcon from './SearchIcon';
 import TedoooLogoIcon from './TedoooLogoIcon';
+import TedooLogoWithTextIcon from './TedooLogoWithTextIcon';
 
 const icons = {
   CommentIcon,
@@ -16,6 +17,7 @@ const icons = {
   NotificationIcon,
   SearchIcon,
   TedoooLogoIcon,
+  TedooLogoWithTextIcon,
 };
 
 export type IconName = keyof typeof icons;

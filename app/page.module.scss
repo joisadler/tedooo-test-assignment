@@ -1,14 +1,73 @@
-.page {
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding-block: $space_xl;
+  font-family: 'DM Sans', serif;
+  font-style: normal;
+  text-align: start;
+}
+
+.logo_container {
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.logo {
+  width: 50%;
+  height: auto;
+}
+
+.main_title {
+  margin-block: 0 $space_md;
+  font-size: toRem(28);
+  font-weight: 700;
+}
+
+.text {
+  margin-block-end: $space_md;
+  font-size: toRem(16);
+  font-weight: 400;
+}
+
+.text_item {
+  @extend .text;
+}
+
+.section_title {
+  margin-block: $space_md;
+  font-size: toRem(24);
+  font-weight: 700;
+}
+
+.text_link {
+  color: $text_link;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $text_primary;
+  }
+}
+
+.home_link {
+  display: inline-flex;
   width: 100%;
-  max-width: $max_content_width;
-  height: calc(100dvh - #{$header_height});
-  margin-inline: auto;
+  justify-content: center;
+  margin-block: $space_lg;
+  font-size: toRem(24);
+  font-weight: 700;
+  color: $text_link;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $text_primary;
+  }
 }
